@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   objectifs.forEach((item) => {
     const texte = item.querySelector(".texte-objectif");
+    if (!texte) return;
 
     // Survol pour PC
     item.addEventListener("mouseenter", () => {
@@ -36,6 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
   faqItems.forEach((item) => {
     const question = item.querySelector(".faq-question");
     const answer = item.querySelector(".faq-answer");
+
+    if (!question || !answer) return;
 
     question.addEventListener("click", () => {
       const isOpen = answer.classList.contains("active");

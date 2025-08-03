@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authentification - Guilde CCS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="authentification">
+  <header>
+    <nav class="navbar">
+      <div class="logo">Guilde CCS</div>
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="menu-icon">
+        <img src="images/hamb.png" alt="Menu" />
+      </label>
+      <ul class="nav-links">
+        <li><a href="index.html">Présentation</a></li>
+        <li><a href="objectifs.html">Objectifs</a></li>
+        <li><a href="histoire.html">Histoire</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="auth.html">Authentification</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenu-auth">
+    <h1>Connexion à la Guilde CCS</h1>
+    <form class="auth-form" action="#" method="post">
+      <label for="username">Identifiant :</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Mot de passe :</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit">Se connecter</button>
+    </form>
+    <p class="note">L'accès est réservé aux membres officiels. Pour toute demande, veuillez contacter un administrateur sur Discord.</p>
+  </main>
+</body>
+</html>

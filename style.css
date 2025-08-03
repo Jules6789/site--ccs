@@ -1,0 +1,316 @@
+/* === CSS général === */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.7;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+main {
+  padding: 3rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === Navbar === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111;
+  padding: 1rem 2rem;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.menu-icon img {
+  width: 40px;
+  height: 40px;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #111;
+    width: 100%;
+    padding: 1em 0;
+    text-align: center;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 1000;
+  }
+
+  #menu-toggle:checked + .menu-icon + .nav-links {
+    display: flex;
+  }
+}
+
+/* === Présentation === */
+body.presentation {
+  background-image: url("images/neon-wallpaper.jpeg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+body.presentation main {
+  padding-top: 15vh;
+  padding-bottom: 4vh;
+}
+
+body.presentation h1 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+body.presentation p {
+  margin-bottom: 1.5rem;
+}
+
+/* === Objectifs : vignettes === */
+.vignettes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.vignette {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.4);
+  transition: transform 0.3s;
+}
+
+.vignette img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  height: 200px;
+}
+
+.vignette .titre {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  pointer-events: none;
+}
+
+.vignette .description {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 1rem;
+  font-size: 0.95rem;
+  width: 100%;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+  text-align: center;
+}
+
+.vignette:hover .description,
+.vignette:focus .description {
+  transform: translateY(0);
+}
+
+.vignette:hover {
+  transform: scale(1.03);
+}
+
+/* === FAQ === */
+.faq-container {
+  max-width: 70%;
+  margin: 3rem auto;
+}
+
+.faq-item {
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.faq-question {
+  background: #f2f2f2;
+  padding: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.faq-answer {
+  display: none;
+  padding: 1rem;
+  background: white;
+}
+
+.faq-item.active .faq-answer,
+.faq-answer.active {
+  display: block;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.faq-answer {
+  transition: all 0.3s ease;
+  border-left: 4px solid #444;
+  background-color: #f4f4f4;
+}
+
+/* === Auth === */
+body.auth {
+  background-color: white;
+  color: black;
+}
+
+.auth-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #111;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.auth-container button:hover {
+  background-color: #333;
+}
+
+/* === Objectifs === */
+body.objectifs {
+  background-color: white;
+  color: black;
+}
+
+.grid-objectifs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 80px 10%;
+}
+
+.objectif-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fafafa;
+}
+
+.objectif-card:hover {
+  transform: scale(1.02);
+}
+
+.objectif-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.objectif-titre {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px 15px;
+  font-weight: bold;
+  border-radius: 5px;
+  pointer-events: none;
+}
+
+.objectif-texte,
+.texte-objectif {
+  display: none;
+  padding: 15px;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.objectif-card.active .objectif-texte,
+.texte-objectif.visible {
+  display: block;
+}
+
+

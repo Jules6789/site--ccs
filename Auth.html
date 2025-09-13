@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Espace sécurisé CCS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Bienvenue dans l’espace protégé de la guilde CCS</h1>
+  <p>Contenu réservé. Vous pouvez y ajouter des documents, des liens, etc.</p>
+
+  <button onclick="logout()">Se déconnecter</button>
+
+  <script>
+    function logout() {
+      localStorage.removeItem("ccsUser");
+      window.location.href = "index.html"; // Retour au site public
+    }
+
+    // Protection : rediriger si l'utilisateur n'est pas connecté
+    const user = localStorage.getItem("ccsUser");
+    if (!user) {
+      window.location.href = "connexion.html";
+    }
+  </script>
+</body>
+</html>

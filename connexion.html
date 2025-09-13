@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Authentification - Guilde CCS</title>
+  <title>Connexion - Guilde CCS</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="authentification">
@@ -19,14 +19,14 @@
         <li><a href="objectifs.html">Objectifs</a></li>
         <li><a href="histoire.html">Histoire</a></li>
         <li><a href="faq.html">FAQ</a></li>
-        <li><a href="auth.html">Authentification</a></li>
+        <li><a href="connexion.html" class="active">Authentification</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="contenu-auth">
     <h1>Connexion à la Guilde CCS</h1>
-    <form class="auth-form" action="#" method="post">
+    <form id="loginForm" class="auth-form" action="#" method="post">
       <label for="username">Identifiant :</label>
       <input type="text" id="username" name="username" required>
 
@@ -35,7 +35,10 @@
 
       <button type="submit">Se connecter</button>
     </form>
+    <p id="error" style="color: red;"></p>
     <p class="note">L'accès est réservé aux membres officiels. Pour toute demande, veuillez contacter un administrateur sur Discord.</p>
   </main>
+
+  <script src="script.js"></script>
 </body>
 </html>

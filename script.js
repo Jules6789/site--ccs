@@ -54,4 +54,28 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  // AUTHENTIFICATION : formulaire de connexion
+  const loginForm = document.getElementById("loginForm");
+
+  if (loginForm) {
+    loginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const validUsers = ["Automne", "Oberin", "Océane", "Toki", "Vittata", "Simon"];
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value;
+
+      if (validUsers.includes(username) && password === "Quetzalcoatl#378") {
+        localStorage.setItem("ccsUser", username);
+
+        const now = new Date();
+        console.log(`[CONNEXION] ${username} s'est connecté à ${now.toLocaleTimeString()} (${now.toLocaleDateString()})`);
+
+        window.location.href = "auth.html";
+      } else {
+        document.getElementById("error").innerText = "Identifiant ou mot de passe incorrect.";
+      }
+    });
+  }
 });
